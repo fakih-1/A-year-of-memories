@@ -101,7 +101,7 @@ body {
   font-family:'Poppins', sans-serif;
   z-index:10001;
   opacity:0;
-  transition:all 0.3s ease;
+  transition:all 0.5s ease;
   pointer-events:none;
 }
 
@@ -297,15 +297,16 @@ function startCountdown(){
     } else {
       clearInterval(interval);
 
-      countdown.innerText = "Selamat menikmati";
-      countdown.style.transform = "scale(2.5)";
-      countdown.style.fontSize = "70px";
+      countdown.innerHTML = "Selamat<br>menikmati";
+      countdown.style.transform = "scale(2.2)";
+      countdown.style.fontSize = "clamp(28px, 6vw, 70px)";
+      countdown.style.lineHeight = "0.9"; 
       countdown.style.fontFamily = "'Great Vibes', cursive"; 
 
       setTimeout(()=>{
         countdown.style.opacity = 0;
         finishGame();
-      },700);
+      },900);
     }
 
   },1000);
